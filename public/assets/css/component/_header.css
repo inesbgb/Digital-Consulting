@@ -1,0 +1,105 @@
+/* style commun pour les 3 headers */
+
+
+/* style pour les bouton menu */
+.luminescent {
+    background-color: transparent;
+    margin: 5px;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none; /* supprimer la bordure par défaut */
+    color: white; /* couleur de texte */
+    padding: 12px 24px; /* ajout de rembourrage */
+    text-align: center; /* centrage du texte */
+    display: inline-block; /* afficher comme un bloc en ligne */
+    font-size: 16px; /* taille de la police */
+    border-radius: 25px; /* bordure arrondie */
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.5), 0px -4px 8px rgba(255, 255, 255, 0.5); /* ombre portée */
+    transition: all 0.3s ease 0s; /* effet de transition lors du survol */
+}
+
+.button-luminescent:hover {
+  background-color: #9362d9; /* changement de couleur de fond lors du survol */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* effet de surbrillance */
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0 20px;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+
+nav a {
+    text-decoration: none;
+}
+
+
+
+header a{
+    padding: 10px;
+    color: whitesmoke;
+}
+
+
+#photo-login{
+    width: 50px;
+}
+
+#menu-deroulant ul {
+  background-color:#9362d9;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+  }
+
+
+  #menu-deroulant ul li {
+    padding: 10px;
+  }
+
+  #menu-deroulant ul li:hover {
+    background-color: black;
+  }
+
+  #menu-deroulant ul li a {
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  #menu-deroulant {
+    display: none;
+    position: absolute;
+    top: 70px;
+    width: 200px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1;
+
+  }
+
+  #menu-deroulant li {
+    border-bottom: 1px solid #ccc;
+  }
+
+  #menu-deroulant li:last-child {
+    border-bottom: none;
+  }
+
+.photo-logo{
+    width: 100px;
+}
+
+.image-logo:hover{
+    width: 100px;
+    transform: scale(1.2);
+}
+#photo-login{
+    width: 50px;
+}

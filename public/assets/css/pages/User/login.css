@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+}
+
+.form-profil{
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+input{
+    border-radius: 1rem;
+    text-align: center;
+    border: black;
+    padding: 20px;
+    background: white;
+}
+
+.test{
+    display: flex;
+    justify-content: center;
+}
+.button{
+    background: #336899;
+
+}

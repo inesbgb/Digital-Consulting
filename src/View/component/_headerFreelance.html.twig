@@ -1,0 +1,57 @@
+<head>
+    <link rel="stylesheet" href="/assets/css/component/_header.css">
+    <link rel="stylesheet" href="/assets/css/component/_headerFreelance.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+    <title></title>
+</head>
+
+<header>
+    <div class="menu-principal">
+        <div class="menu-gauche">
+            <div class="menu-btn">
+                <a href="/myAds" class="button-luminescent luminescent">Mes annonces</a>
+                <a href="/mailbox" class="button-luminescent luminescent">Messagerie</a>
+            </div>
+            <div class="image-logo">
+                <a href="/">
+                    <img class="photo-logo" src="/assets/images/component/header/logo_transparent.png" alt="Logo transparent">
+                </a>
+            </div>
+        </div>
+        <div class="menu-droite">
+            <p id="bouton-deroulant" class="luminescent">Bonjour {{ user.firstname }}</p>
+            <div id="menu-deroulant">
+                <ul>
+                    <li><a href="/profil">Profil</a></li>
+                    <li><a href="/createAd">Creer une annonce</a></li>
+                    <li><a href="Bill/order">Mes Commandes</a></li>
+                    <li><a href="/logout">Se deconnecter</a></li>
+                </ul>
+            </div>
+            <img id="photo-login" src="/assets/images/component/header/profil.png" alt="Photo de profil">
+        </div>
+    </div>
+</header>
+
+
+<script>
+    $(document).ready(function() {
+        // On recupere les boutons grace à leur id
+        var menuDeroulant = $('#menu-deroulant');
+
+        // Cacher la navigation initialement
+        menuDeroulant.hide();
+
+
+        // On ajoute un écouteur d'événement sur l'image de profil
+        $('#bouton-deroulant').click(function() {
+            // On affiche ou on cache le menu déroulant selon l'état actuel
+            if (menuDeroulant.is(':hidden')) {
+                menuDeroulant.fadeIn('fast');
+            } else {
+                menuDeroulant.fadeOut('fast');
+            }
+        });
+    });
+</script>

@@ -1,0 +1,77 @@
+<head>
+    <link rel="stylesheet" href="assets/css/component/_header.css">
+
+    <link rel="stylesheet" href="assets/css/component/_headerClient.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+
+<header>
+    <div class="menu-principal">
+        <div class="menu-gauche">
+            <button class="button-luminescent luminescent" id="menu-button">MENU</button>
+
+            <div class="image-logo">
+                <a href="/">
+                    <img class="photo-logo" src="/assets/images/component/header/logo_transparent.png" alt="Logo transparent">
+                </a>
+            </div>
+        </div>
+        <div class="menu-droite">
+            <p id="bouton-deroulant" class="luminescent">Bonjour {{ user.firstname }}</p>
+            <div id="menu-deroulant">
+                <ul>
+                    <li><a href="/profil">Profil</a></li>
+                    <li><a href="/mailbox">Ma Boite de reception</a></li>
+                    <li><a href="/Bill">Mes Factures</a></li>
+                    <li><a href="/logout">Se deconnecter</a></li>
+                </ul>
+            </div>
+            <img id="photo-login" src="/assets/images/component/header/profil.png" alt="Photo de profil">
+        </div>
+    </div>
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="/theAds?service=DEVELOPPEMENT %26 IT">DEVELOPPEMENT & IT</a></li>
+            <li><a href="/theAds?service=DESIGN %26 CREATION">DESIGN & CREATION</a></li>
+            <li><a href="/theAds?service=MARKETING DIGITAL">MARKETING DIGITAL</a></li>
+            <li><a href="/theAds?service=COMMUNITY MANAGEMENT">COMMUNITY MANAGEMENT</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<script>
+$(document).ready(function() {
+    // On recupere les boutons grace à leur id
+    var navMenu = $('#nav-menu');
+    var menuButton = $('#menu-button');
+    var menuDeroulant = $('#menu-deroulant');
+
+    // On cache toutes les barres de navigation initialement
+    navMenu.hide();
+    menuDeroulant.hide();
+
+    // On ajoute un écouteur d'événement sur le bouton de menu
+    menuButton.click(function() {
+        //On affiche ou on cache les barres de navigation selon les états actuels
+        if (navMenu.is(':hidden')) {
+            navMenu.fadeIn('fast');
+            menuDeroulant.hide();
+        } else {
+            navMenu.fadeOut('fast');
+        }
+    });
+
+    // On ajoute un écouteur d'événement sur l'image de profil
+    $('#photo-login').click(function() {
+        //On affiche ou on cache les barres de navigation selon les états actuels
+        if (menuDeroulant.is(':hidden')) {
+            menuDeroulant.fadeIn('fast');
+            navMenu.hide();
+        } else {
+            menuDeroulant.fadeOut('fast');
+        }
+    });
+});
+</script>

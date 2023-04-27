@@ -1,0 +1,86 @@
+.contenent-inscription{
+   /* background: aqua;*/
+    --background-button : #2c1e4a;
+    --border-button : #d73cbe;
+    --taille-button : 60px;
+    font-family: Lastica, sans-serif;
+    text-align: center;
+
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.role-inscription{
+    width: 60%;
+    color: black;
+    display: grid;
+    gap : 2rem;
+    padding-bottom: 30px;
+}
+
+.errors{
+    padding-bottom:20px;
+    color:red;
+}
+
+.role{
+    border: 1px solid white;
+    background: white;
+    border-radius: 2rem;
+    padding: 50px;
+    font-size: 2rem;
+
+    display: grid;
+    grid-template-columns : 4fr 1fr;
+}
+
+.roleUser{
+    /*background: blue;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonUser{
+    /*background: brown;*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* avant avoir cliqué */
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    border-radius: 50%;
+    width: var(--taille-button);
+    height: var(--taille-button);
+
+    border: 2px solid var(--border-button);
+    background: var(--background-button);
+}
+
+/* apres avoir cliqué */
+input[type="radio"]:checked,
+input[type="radio"]::before  {
+    background-image: url(/assets/images/pages/signin/valited_icon.png) ;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.button{
+    font-family: Lastica, sans-serif;
+    border-radius: 1rem;
+    border: black;
+    padding: 20px;
+    background: #e38496;
+}
+

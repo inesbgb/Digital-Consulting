@@ -1,0 +1,27 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/pages/Home/home.css">
+{% endblock %}
+
+
+{% block title %}Accueil{%  endblock %}
+
+{% block content %}
+    <video id="background-video" autoplay loop muted>
+        <source src="assets/images/backgrounds/video.mp4" type="video/mp4">
+    </video>
+
+    <div class="grid-main">
+        <div class="box1" id="box1">
+            <h1 class="title">Digital <span class="souligne">Consulting</span></h1>
+            <h2 >Connecteur de projets</h2>
+        </div>
+        <div class="box2">
+            <img src="assets/images/pages/home/home.gif" alt="Boule" class="image">
+        </div>
+    </div>
+{% endblock %}
+
+
+

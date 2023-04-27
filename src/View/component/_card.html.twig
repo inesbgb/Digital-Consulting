@@ -1,0 +1,101 @@
+
+<link rel="stylesheet" href="/assets/css/component/_card.css">
+
+<div class="card">
+
+    <div class="card-header">
+        <h1 text-ellipsis>{{ annonce.title }}</h1>
+    </div>
+    <div class="card-body">
+        <!-- Rajouter une fonction dans le controller prendre que les 150 caracteres -->
+        <p text-ellipsis>
+            {{ annonce.description }}
+        </p>
+        <div class="button-card">
+            <a href="#id1{{ loop.index }}">
+                <button class="btn information"><img src="/assets/images/component/card/info.png"></button>
+            </a>
+            <a href="#id2{{ loop.index }}">
+                <button id="myBtn" class="btn modifier"><img src="/assets/images/component/card/modifier.png"></button>
+            </a>
+            <a  onclick="showConfirmation()" href="/Annonce/delete?id={{ annonce.id }}">
+                <button class="btn supprimer"><img src="/assets/images/component/card/supprimer.png"></button>
+            </a>
+{#            id de l'annonce#}
+            <a href="/createTchat?id={{ annonce.id }}">
+                <button class="btn envoyer"><img src="/assets/images/component/card/envoyer.png"></button>
+            </a>
+            <a href="/Bill/add?id={{ annonce.id }}">
+                <button class="btn paiement"><img src="/assets/images/component/card/paiement.png"></button>
+            </a>
+{#            <input type="button" class="btn detail"value="Détails">#}
+{#            <input type="button" class="btn contacter"value="Contacter">#}
+        </div>
+    </div>
+    <div class="card-price">
+        <p text-ellipsis>Prix : {{ annonce.price }}€</p>
+    </div>
+
+</div>
+
+<div id="id1{{ loop.index }}" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <header class="container-modal">
+                <a href="#" class="closebtn">×</a>
+            </header>
+            <div class="container-modal">
+                <p>Titre : {{ annonce.title }}</p>
+                <p>Description :{{ annonce.description }}</p>
+                <p>Prix : {{ annonce.price }}</p>
+            </div>
+            <footer class="container-modal">
+                <a href="#" ><button>Fermer</button></a>
+            </footer>
+        </div>
+    </div>
+</div>
+
+<div id="id2{{ loop.index }}" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <header class="container">
+                <a href="#" class="closebtn">×</a>
+                <h2>Entête de modale</h2>
+            </header>
+            <div class="container">
+                <form method="post" action="/Annonce/edit?id={{ annonce.id }}">
+                    <input name="title" value="{{ annonce.title }}">
+                    <select name="service_id"  >
+²                        {% for service in services %}
+                            <option value="{{ service.id }}">{{ service.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <input name="description" value="{{ annonce.description }}">
+                    <input name="price" value="{{ annonce.price }}">
+                        <button>Enregistrer</button>
+                </form>
+            </div>
+
+            <footer class="container">
+                <a href="#" ><button>Fermer</button></a>
+            </footer>
+        </div>
+    </div>
+</div>
+
+{% block javascript %}
+<script>
+    function showConfirmation() {
+        const result = confirm("Voulez-vous vraiment continuer ?");
+
+        if (result) {
+            // L'utilisateur a cliqué sur "OK"
+            console.log("L'utilisateur a confirmé");
+        } else {
+            // L'utilisateur a cliqué sur "Annuler"
+            console.log("L'utilisateur a annulé");
+        }
+    }
+</script>
+{% endblock %}

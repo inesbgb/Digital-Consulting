@@ -1,0 +1,63 @@
+/* Les differentes polices d'écriture de notre site */
+@font-face {
+    font-family: 'AnonymousPro';
+    src: url(../police/Anonymous_Pro/AnonymousPro-Regular.ttf);
+    /* Ajoutez ici les autres formats de police */
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Les differentes polices d'écriture de notre site */
+@font-face {
+    font-family: 'Lastica';
+    src: url(../police/FontsFree-Net-Lastica.ttf);
+    /* Ajoutez ici les autres formats de police */
+    font-style: normal;
+    font-weight: 400;
+}
+
+*{
+    padding: 0;
+    margin:0;
+    text-decoration : none;
+}
+
+body {
+    background: url(../images/backgrounds/image.jpg) ;
+    background-size: cover;
+    color: white;
+    font-family: Lastica,sans-serif;
+}
+
+.contenant_main{
+    padding: 0px;
+}
+
+h1{
+    font-family: Lastica,sans-serif;
+    font-size: 5rem;
+}
+
+p{
+    font-family: AnonymousPro,sans-serif;
+    font-size: 2rem;
+}
+
+button{
+    font-family: Lastica,sans-serif;
+}
+
+@media screen and (min-width: 200px) and (max-width: 640px) {
+}
+/* pour ordinateur et tablette mode payage**/
+@media screen and (min-width: 1024px) {
+    h1 {
+        font-family: Lastica, sans-serif;
+        font-size: 4rem;
+    }
+
+    p {
+        font-family: AnonymousPro, sans-serif;
+        font-size: 2rem;
+    }
+}

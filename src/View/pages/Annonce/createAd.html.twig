@@ -1,0 +1,50 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/pages/Annonce/createAd.css">
+{% endblock %}
+
+{% block title %}Creer une annonce{%  endblock %}
+
+{% block content %}
+
+    <div class="contenent-createAd">
+            <h1>Creer une annonce</h1>
+
+        <form class="form-profil" method="post">
+            <div class="grid-container">
+                    <input class="box1" name="title" type="text" placeholder="titre" required>
+                    <select class="box2" name="service_id" required >
+                        <option value="" selected disabled hidden>Selectionner le type de service que vous souhaitez proposer</option>
+                        {% for service in services %}
+                            <option value="{{ service.id }}">{{ service.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <input class="box3" name="description" type="text" placeholder="description de l'annonce" required>
+                    <input class="box4" name="price" class="tarif" type="number" placeholder="tarif:€" required>
+                    <input class="box5 button" type="submit" name="buttonCreateAd" value="Enregistrer">
+            </div>
+        </form>
+
+    </div>
+    <div class="errors">
+        {% if errors is not empty %}
+            <ul>
+                {% for error in errors %}
+                    {% if error is iterable %}
+                        {% for sub_error in error %}
+                            <li>{{ sub_error }}</li>
+                        {% endfor %}
+                    {% else %}
+                        <li>{{ error }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}Design & création{% endblock %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/pages/Mailbox/message.css">
+{% endblock %}
+
+{% block content %}
+    <div class="container_messages">
+        {% for message in messages %}
+            {% if message.user_id == user.id %}
+                <p class="right">{{ message.message }}</p>
+            {% else %}
+                <p class="left">{{ message.message }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% if messages[0].tchat_id is defined %}
+        {% set action = "/tchatShow?id=" ~  messages[0].tchat_id %}
+    {% else %}
+{#        recupere l'id de l'annonce#}
+        {% set action = "/createTchat?id=" ~ id_annonce %}
+    {% endif %}
+    <form action="{{ action }}" method="post">
+    <div class="container_reply">
+        {% if id_annonce is defined %}
+            <input name="object" class="reply_text" placeholder="Objet :" required></input>
+        {% endif %}
+            <textarea name="newMessage" class="reply_text" placeholder="Répondre..." required></textarea>
+                <button class="reply_button">Envoyer</button>
+    </div>
+    </form>
+{% endblock %}

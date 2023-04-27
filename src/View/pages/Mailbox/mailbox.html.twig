@@ -1,0 +1,35 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/pages/Mailbox/mailbox.css">
+{% endblock %}
+
+{% block title %}Boite de reception {%endblock %}
+
+{% block content %}
+
+    <div class="contenent-inbox">
+        <div class="grid-container">
+            <div class="box1">
+                <img  src="/assets/images/pages/inbox/mail.png" alt="Photo de profil">
+            </div>
+            <div class="box2">
+                <h1>Boite de reception</h1>
+            </div>
+            <div class="box3" >
+                {% for tchat in tchats %}
+
+                    <label class="date">{{ tchat.created_at|date('Y-m-d') }}</label>
+                    <label class="date">{{ tchat.object }}</label>
+                    <label class="client">{{ tchat.lastname ~ " " ~ tchat.firstname}}</label>
+                    <label class="client"><a href="/tchatShow?id={{ tchat.id }}">Voir le Chat</a></label>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+
+

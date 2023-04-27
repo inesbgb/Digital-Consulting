@@ -1,0 +1,43 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/pages/User/signin.css">
+{% endblock %}
+
+{% block title %}Inscription{%  endblock %}
+
+
+{% block content %}
+
+    <div class="contenent-inscription">
+        <div class="title-inscription">
+            <h1>Rejoignez nous</h1>
+        </div>
+        <form method="post" class="form-signin">
+            <div class="role-inscription">
+                <div class="role">
+                    <label class="roleUser">Je suis client, je cherche un freelanceur</label>
+                    <label class="buttonUser"><input type="radio" name="isAClient" value="client" ></label>
+                </div>
+                <div class="role">
+                    <label class="roleUser">Je suis freelance</label>
+                    <label class="buttonUser"><input type="radio" name="isAClient" value="freelance" ></label>
+                </div>
+            </div>
+            <div class="errors">
+            {% if errors is not empty %}
+                {% for error in errors %}
+                    {{ error }}
+                {% endfor %}
+            {% endif %}
+            </div>
+
+                <input class="button" type='submit' name="buttonIsAFreelance" value="Creer un compte">
+        </form>
+    </div>
+
+{% endblock %}
+
+
+
+

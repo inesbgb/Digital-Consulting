@@ -1,0 +1,46 @@
+/* Style pour le header */
+.menu-principal{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 40px;
+}
+
+.photo-logo{
+    width: 100px;
+}
+
+.image-logo:hover{
+    width: 100px;
+    transform: scale(1.2);
+}
+
+
+
+/* style pour les bouton menu / s'inscrire et se connecter */
+.button-luminescent {
+    background-color: transparent;
+    margin: 5px;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none; /* supprimer la bordure par défaut */
+    color: white; /* couleur de texte */
+    padding: 12px 24px; /* ajout de rembourrage */
+    text-align: center; /* centrage du texte */
+    text-decoration: none; /* suppression des soulignements */
+    display: inline-block; /* afficher comme un bloc en ligne */
+    font-size: 16px; /* taille de la police */
+    border-radius: 25px; /* bordure arrondie */
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.5), 0px -4px 8px rgba(255, 255, 255, 0.5); /* ombre portée */
+    transition: all 0.3s ease 0s; /* effet de transition lors du survol */
+}
+
+.button-luminescent:hover {
+    background-color: #9362d9; /* changement de couleur de fond lors du survol */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* effet de surbrillance */
+}
+
+

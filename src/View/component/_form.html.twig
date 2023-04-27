@@ -1,0 +1,43 @@
+<form class="form-profil" method="post">
+    <div class="grid-container">
+        <div class="genre">
+            {% set sexes = ["madame", "monsieur", "autre"] %}
+            {% for value in sexes %}
+                 {% if user.sex == value %}
+                     <input type="radio" name="sex" value="{{ value }}" checked>
+                 {% else %}
+                     <input type="radio" name="sex" value="{{ value }}">
+
+                 {% endif %}
+                <label>{{ value }}</label>
+            {% endfor %}
+        </div>
+        {% if user %}
+            <input type="text" name="firstname" placeholder="prenom" value="{{ user.firstname }}" required >
+            <input type="text" name="lastname" placeholder="nom" value="{{ user.lastname }}" required>
+            <input type="text" name="adress" placeholder="adresse" value="{{ user.adress }}" required>
+            <input type="text" name="phone" placeholder="telephone" value="{{ user.phone }}" required>
+            <input type="text" name="mail" placeholder="adresse mail" title="Vous ne pouvez pas modifier notre adresse mail" value="{{ user.mail }}" readonly>
+            <input type="password" name="password" placeholder="nouveau mot de passse" required>
+            <input type="password" name="confmdp" placeholder="confirmer votre nouveau mot de passse" required>
+        {% else %}
+            <input type="text" name="firstname" placeholder="prenom" required >
+            <input type="text" name="lastname" placeholder="nom" required>
+            <input type="text" name="adress" placeholder="adresse" required>
+            <input type="text" name="phone" placeholder="telephone" required>
+            <input type="text" name="mail" placeholder="adresse mail" required>
+            <input type="password" name="password" placeholder="mot de passse" required>
+            <input type="password" name="confmdp" placeholder="confirmer votre mot de passse" required>
+        {% endif %}
+    </div>
+    <div class="errors">
+        {% if errors is not empty %}
+        <ul>
+            {% for error in errors %}
+            <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <input class="button" type="submit" value="Enregistrer">
+</form>

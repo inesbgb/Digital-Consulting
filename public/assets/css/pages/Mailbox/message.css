@@ -1,0 +1,52 @@
+.container_messages {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
+    background-color: #00000000;
+    border-radius: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.left {
+    background-color: #86d3ec;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    align-self: flex-start;
+}
+
+.right {
+    /*background-color: #e2f2ff;*/
+    background-color: #c4dbfc;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    align-self: flex-end;
+}
+.container_reply {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.reply_text {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.reply_button {
+    margin-left: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #008cba;
+    color: #ffffff;
+    cursor: pointer;
+}

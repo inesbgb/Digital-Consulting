@@ -1,0 +1,29 @@
+/* Style pour le header Freelance */
+
+.menu-principal{
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    padding-bottom: 40px;
+}
+.menu-principal{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.menu-gauche{
+    display: flex;
+    align-items: center;
+}
+.menu-droite{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.menu-btn{
+    display: flex;
+    flex-direction: column;
+}

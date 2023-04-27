@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    {% block stylesheet %}{% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+
+    {% if not user  %}
+        {% include 'component/_headerVisitor.html.twig' %}
+    {% else %}
+        {% if user.role == 'freelance' %}
+            {% include 'component/_headerFreelance.html.twig' %}
+        {% elseif user.role == 'client' %}
+            {% include 'component/_headerClient.html.twig' %}
+        {% endif %}
+    {% endif %}
+
+<body>
+    <main class="contenant_main">
+        <section class="section">
+            {% block content %}{% endblock %}
+            {% block javascript %}{% endblock %}
+        </section>
+    </main>
+</body>
+
+{% include 'component/_footer.html.twig' %}
+
+
+</html>
+

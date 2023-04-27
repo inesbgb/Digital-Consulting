@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+    <link rel="stylesheet" href="/assets/css/pages/User/profil.css">
+{% endblock %}
+
+{% block title %}Creer mon compte{% endblock %}
+
+{% block content %}
+
+    <div class="contenent-profil">
+        <div class="title-profil">
+            <img src="assets/images/pages/profil/profil.png" alt="Photo de profil">
+            <h1>Creer mon compte</h1>
+        </div>
+        {% include 'component/_form.html.twig' %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,189 @@
+#background-video {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.grid-main{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.box1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/*h1:hover{*/
+/*    color: #9362d9;*/
+/*}*/
+/*h2:hover{*/
+/*    color: #9362d9;*/
+/*}*/
+
+
+/* mobile mode portait */
+
+
+/* mobile mode paysage et mobile */
+@media screen and (min-width: 320px) and (max-width: 600px) {
+    .grid-main{
+        margin-top: 30px;
+    }
+    .grid-main{
+        display: grid;
+        gap:40px;
+        grid-template-columns: 1fr;
+        grid-template-row: 2fr 1fr 1fr;
+        text-align: left;
+    }
+    .box1{
+        padding-left: 20px;
+        display: flex;
+        align-items: center;
+    }
+    .box2{
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .image{
+        width: 70%;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 700px) {
+    .grid-main{
+        margin-top: 80px;
+    }
+    .box1{
+        justify-content: center;
+        width: 80%;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 768px) {
+    .grid-main{
+        margin-top: 80px;
+    }
+    .box1{
+        justify-content: center;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2{
+        font-size: 1.2rem;
+    }
+}
+
+/* tablette mode portait */
+@media screen and (min-width: 768px) and (max-width: 834px){
+    .grid-main{
+        margin-top: 80px;
+    }
+    .box1{
+        justify-content: center;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+}
+
+/*@media screen and (max-width: 834px){*/
+/*    #box1 {*/
+/*        animation-name: titileAnimation;*/
+/*        animation-duration: 5s;*/
+/*        animation-iteration-count: 1;*/
+/*    }*/
+
+/*    @keyframes titileAnimation {*/
+/*        0% {*/
+/*            transform: translate(100%, 70%)  scale(0.5);*/
+/*        }*/
+/*        50% {*/
+/*            transform: translate(0px, 70%)  scale(0.5);*/
+/*        }*/
+/*        100% {*/
+/*            transform: translate(0px, 0px) ;*/
+/*        }*/
+/*    }*/
+/*}*/
+
+
+/*@media screen and (min-width: 834px){*/
+/*    #box1 {*/
+/*        animation-name: titileAnimation;*/
+/*        animation-duration: 5s;*/
+/*        animation-iteration-count: 1;*/
+/*    }*/
+
+/*    @keyframes titileAnimation {*/
+/*        0% {*/
+/*            transform: translate(0px, 100%) rotate(180deg) scale(0.5);*/
+/*        }*/
+/*        10% {*/
+/*            transform: translate(0px, 100%) rotate(180deg) scale(0.5);*/
+/*        }*/
+/*        100% {*/
+/*            transform: translate(0px, 0px) rotate(0deg);*/
+/*        }*/
+/*    }*/
+/*}*/
+
+
+
+@media screen and (min-width: 834px) and (max-width: 1024px){
+    .grid-main{
+        margin-top: 80px;
+    }
+    .box1{
+        padding-left: 20px;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    h2{
+        font-size: 1.5rem;
+    }
+}
+/* ordinateur + tablette mode paysage  */
+@media screen and (min-width: 1024px){
+    .box1{
+        padding-left: 20px;
+        justify-content: center;
+    }
+    h1 {
+        font-size: 5rem;
+    }
+
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
